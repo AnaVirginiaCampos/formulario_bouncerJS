@@ -7,6 +7,15 @@
     <title>Formulário teste</title>
 </head>
 <body>
-    
+    <h1>Hello, Form!</h1>
+    <form>
+        <label for="email">You email address</label>
+        <input type="email" name="email" id="email">
+        <button>Submit</button>
+    </form>
 </body>
+<script src="bouncer-master/dist/bouncer.polyfills.min.js"></script>
+<script>
+    var validate = new Bouncer('form');
+</script>
 </html>
