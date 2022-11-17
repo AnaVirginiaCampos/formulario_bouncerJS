@@ -21,6 +21,21 @@
 </body>
 <script src="bouncer-master/dist/bouncer.polyfills.min.js"></script>
 <script>
-    var validate = new Bouncer('form');
+    var validate = new Bouncer('form', {
+        customValidations: {
+            isHello: function (field) {
+                if (field.value === 'hello') return false;
+                
+                return true;
+            }
+            },
+            messages: {
+                isHello: 'This field shold have a value of "hello"',
+
+                isHello: function () {
+                    return 'This field should have a value of "hello"';
+                }
+            }
+        });
 </script>
 </html>
