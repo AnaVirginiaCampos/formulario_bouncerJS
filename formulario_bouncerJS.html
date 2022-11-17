@@ -13,7 +13,9 @@
         <label for="first-name">First Name</label> <br/>
         <input type="text" name="first-name" required> <br/>
         <label for="email">You email address</label> <br/>
-        <input type="email" name="email" id="email" required> <br/>
+        <input type="email" name="email" id="email" data-bouncer-target="#email-error" required>
+        <p><strong>Why do we need this?</strong> We'll use your email address to send you account information.</p>
+        <div id="email-erro"></div><br/>
         <label for="tel">Phone</label><br/>
         <input type="text" name="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}" data-bouncer-message="Please use the following format: 555-555-5555"> <br/>
         <button>Submit</button>
@@ -35,7 +37,8 @@
                 isHello: function () {
                     return 'This field should have a value of "hello"';
                 }
-            }
+            },
+            messageAfterField: false
         });
 </script>
 </html>
